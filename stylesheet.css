@@ -1,0 +1,31 @@
+@font-face { font-family: Mentone; src('mentone-semibold.ttf'); }
+
+.content {
+  font-family: Mentone;
+}
+
+
+.content ul li,
+.content ul li ul li {
+  text-align: left;
+  font-size: 40px;
+  list-style: inside disc none;
+}
+
+.content ul li ul li {
+  text-indent: 30px;
+  color: blue;
+}
+
+.content code {
+  font-size: 24px;
+}
+
+.content blockquote {
+  font-size: 40px;
+}
+
+.content blockquote p {
+  padding-bottom: 10px;
+  line-height: 1.1em;
+}
