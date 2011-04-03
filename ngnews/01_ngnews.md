@@ -24,3 +24,19 @@
 * Custom development
 * Linux deploy platform
 * MySQL database
+
+
+!SLIDE commandline
+
+    $ rake
+
+    Finished in 27.79 seconds
+    285 examples, 0 failures
+
+    152 scenarios (152 passed)
+    1363 steps (1363 passed)
+    4m4.505s
+
+    Finished in 8.06 seconds
+    77 examples, 0 failures
+

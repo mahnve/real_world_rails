@@ -199,13 +199,13 @@
       end
     end
 
-!SLIDE 
+!SLIDE bullets
 
 # Alternative: [Resque](https://github.com/defunkt/resque)
 
 * Redis backed
 
-!SLIDE 
+!SLIDE bullets
 
 # [Savon](https://github.com/rubiii/savon)
 
