@@ -1,1 +1,11 @@
-{ "name": "My Preso", "sections": [ {"section":"one"} ]}
+{ "name": "Real World Rails", 
+  "sections": [ 
+    {"section":"intro"},
+    {"section":"ngnews"},
+    {"section":"libraries"},
+    {"section":"bdd"},
+    {"section":"deployment"},
+    {"section":"tools"},
+    {"section":"thanks"}
+  ]
+}
