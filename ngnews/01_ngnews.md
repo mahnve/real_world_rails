@@ -10,12 +10,17 @@
 * Little web traffic
 * Lots of email, FTP, WS
 
+!SLIDE center
+
+![NGNews](ngnews.png)
+
 !SLIDE bullets
 
 # Why Rails?
 
 * Small project, few devs
-* True web application
-* Not suitable for CMS
+  * No dedicated QA, PM etc
+* Web application
+* Custom development
 * Linux deploy platform
 * MySQL database
