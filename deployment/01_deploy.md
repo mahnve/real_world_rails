@@ -2,7 +2,7 @@
 
 # Deployment
 
-!SLIDE 
+!SLIDE bullets
 
 # Passenger
 
@@ -40,16 +40,43 @@
 
     Press Enter to continue, or Ctrl-C to abort
 
-!SLIDE
+!SLIDE bullets
 
 # [Unicorn](https://github.com/defunkt/unicorn)
 
 * For those times when Passenger is not an option
 * Runs as separate processes, proxied from web server
 
-!SLIDE
+!SLIDE bullets
 
 # SysLogLogger
 
 * Logs to system logger
 * Configuration in syslog-ng, rsyslog ...
+
+!SLIDE 
+
+# Capistrano
+
+!SLIDE commandline
+
+    $ cap deploy
+
+     * == Currently executing `deploy'
+     * == Currently executing `deploy:update'
+    ** transaction: start
+     * == Currently executing `deploy:update_code'
+       updating the cached checkout on all servers
+       executing locally: "git ls-remote git://github.com/agilasverige/agilasverige_site.git master"
+       command finished in 542ms * executing "if [ -d /home/agilasverige/apps/agilasverige/shared/cached-copy ]; then cd /home/agilasverige/apps/agilasverige/shared/cached-copy && git fetch -q origin && git reset -q --hard 93bd8a8277426d5ccdb94399704ee004a6050189 && git clean -q -d -x -f; else git clone -q git://github.com/agilasverige/agilasverige_site.git /home/agilasverige/apps/agilasverige/shared/cached-copy && cd /home/agilasverige/apps/agilasverige/shared/cached-copy && git checkout -q -b deploy 93bd8a8277426d5ccdb94399704ee004a6050189; fi"
+       servers: ["agilasverige.cust.globalinn.com"]
+       [agilasverige.cust.globalinn.com] executing command
+       command finished in 1603ms
+    [...]
+    Recorded deployment to 'Agila Sverige' (2011-04-04 09:59:53 +0200)
+    ** Uploaded deployment information to New Relic
+      * == Currently executing `deploy:restart'
+      * executing "touch /home/agilasverige/apps/agilasverige/current/tmp/restart.txt"
+        servers: ["agilasverige.cust.globalinn.com"]
+        [agilasverige.cust.globalinn.com] executing command
+        command finished in 248ms

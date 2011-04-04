@@ -64,7 +64,7 @@ Come see my other talk about this :)
     service.send()
     service.return_code.should == 1
 
-!SLIDE
+!SLIDE bullets
 
 # Mocking
 
@@ -73,3 +73,14 @@ Come see my other talk about this :)
 * [FlexMock](http://flexmock.rubyforge.org/)
 * [RR](https://github.com/btakita/rr)
 
+!SLIDE code
+
+    @@@ Ruby
+
+    flexmock(User).should_receive(:find).with('42').and_return(jane)
+    User.expects(:find).with('42').returns {jane}
+    User.should_receive(:find).with('42').and_return(jane)
+    User.should_receive(:find).with('42') {jane}
+    mock(User).find('42') {jane}
+
+Copied from the RR README

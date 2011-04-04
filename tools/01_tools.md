@@ -16,6 +16,7 @@
 
 # Continuous Integration
 
+* Jenkins
 * CIJoe
 * CruiseControl.rb
 * Cerberus
