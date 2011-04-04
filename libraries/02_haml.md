@@ -83,7 +83,7 @@
       = form.buttons do
         = form.commit_button
     
-!SLIDE 
+!SLIDE bullets
 
 # Jammit
 

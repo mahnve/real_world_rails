@@ -55,9 +55,13 @@
 * .Net
 * Java
 
+!SLIDE full-page
+
+![Exceptional](exceptional.png)
+
 !SLIDE smbullets
 
-# Exceptional
+# Exceptional Features
 
 * Exceptions
 * 404's

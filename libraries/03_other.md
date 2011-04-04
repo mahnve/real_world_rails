@@ -139,8 +139,6 @@
       end
     end
 
-* Redis backed
-
 !SLIDE bullets
 
 # [Savon](https://github.com/rubiii/savon)
