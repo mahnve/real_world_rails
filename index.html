@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Real World Rails</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/stylesheet.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content center" ref="intro/title/1">
+<h1>Real World Rails</h1>
+
+<p>Marcus Ahnve<br/>
+Valtech AB <br/>
+<a href="mailto:marcus.ahnve@valtech.se">marcus.ahnve@valtech.se</a><br/>
+<a href="http://www.twitter.com/mahnve">@mahnve</a></p>
+
+<p><img src="./file/intro/valtech_logo.jpg" width="568" height="143" alt="Valtech"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/title/2">
+<h1>About me</h1>
+
+<ul>
+<li>Software Developer</li>
+<li>Polyglot Programmer</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/title/3">
+<h1>Q: Used Rails?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/title/4">
+<h1>Q: Used Ruby?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/title/5">
+<h1>Goal of the presentation</h1>
+
+<ul>
+<li>Most have seen the venerable Blog example</li>
+<li>Travellers guide</li>
+<li>A flyover a real project</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/title/6">
+<h1>Agenda</h1>
+
+<ul>
+<li>Rails background</li>
+<li>NGNews</li>
+<li>Tools</li>
+<li>Libraries</li>
+<li>Deployment</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="ngnews/01_ngnews/1">
+<h1><a href="https://www.ngnews.se">https://www.ngnews.se</a></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="ngnews/01_ngnews/2">
+<h1>About NGNews</h1>
+
+<ul>
+<li>Financial News</li>
+<li>Rebuild 10 year old system
+
+<ul>
+<li>No small public releases</li>
+</ul>
+</li>
+<li>Little web traffic</li>
+<li>Lots of email, FTP, WS</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="ngnews/01_ngnews/3">
+<p><img src="./file/ngnews/ngnews.png" width="1024" height="748" alt="NGNews"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="ngnews/01_ngnews/4">
+<h1>Why Rails?</h1>
+
+<ul>
+<li>Small project, no dedicated QA, PM etc</li>
+<li>Web application</li>
+<li>Custom development</li>
+<li>Linux deploy platform</li>
+<li>MySQL database</li>
+<li>Wanted to</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="libraries/01_libraries">
+<h1>Libraries</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content ! SLIDE subsection" ref="libraries/02_haml/1">
+<h1>Views</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="libraries/02_haml/2">
+<pre class="sh_HTML"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;NGNews&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class='container page'&gt;
+      &lt;div class='beta'&gt;
+        &lt;%= image_tag('beta.png')%&gt;
+      &lt;header class='head line' role='banner'&gt;
+        &lt;nav class='action-bar'&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/02_haml/3">
+<h1><a href="http://haml-lang.com/">Haml</a></h1>
+
+<pre class="sh_Haml"><code>!!! 5
+%head
+  %title NGNews
+%body
+  #container.page
+    .beta
+      = image_tag('beta.png')
+    %header.head.line{:role =&gt; 'banner'}
+      %nav.action-bar
+        %ul
+          %li</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/02_haml/4">
+<h1>Filters</h1>
+
+<pre><code>:javascript
+  var s = $('body').data('foo', '#{I18n.t('search_news')}');
+:markdown
+  # A title 
+
+  Some text
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="libraries/02_haml/5">
+<h1>Formtastic</h1>
+
+<ul>
+<li>Forms DSL</li>
+<li>Writing forms is boring</li>
+<li>And repetitive</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/02_haml/6">
+<h1>The simplest form</h1>
+
+<pre class="sh_Haml"><code>- semantic_form_for @user do |form|
+  = form.inputs
+  = form.buttons</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/02_haml/7">
+<h1>Slightly more complex</h1>
+
+<pre class="sh_Haml"><code>- semantic_form_for @user do |form|
+  = form.inputs do
+    = form.input :first_name
+    = form.input :last_name
+    = form.input :role, :as =&gt; checkbox
+  = form.buttons do
+    = form.commit_button</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="libraries/02_haml/8">
+<h1>Jammit</h1>
+
+<ul>
+<li>Packs your CSS and Javascripts</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/02_haml/9">
+<h1>Define your assets</h1>
+
+<pre class="sh_Yaml"><code>
+embed_assets: 'datauri'
+javascripts:
+  common:
+    - public/javascripts/jquery-ui-1.8.5.custom.min.js
+    - public/javascripts/rails.js
+stylesheets:
+  common:
+    - public/stylesheets/oocss-base.css
+    - public/stylesheets/colorbox.css</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/02_haml/10">
+<h1>In your view</h1>
+
+<pre><code>  @@@ Haml
+  = include_stylesheets :common
+  = include_javascripts :common
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="libraries/03_other/1">
+<h1>More Backendish</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="libraries/03_other/2">
+<h1>The Rails Ecosystem</h1>
+
+<ul>
+<li>Vanilla Rails is just that</li>
+<li>Vast amount of libraries available</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="libraries/03_other/3">
+<h1><a href="https://github.com/josevalim/inherited_resources">InheritedResources</a></h1>
+
+<ul>
+<li>CRUD Controllers</li>
+<li>Does most of the work for you</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/4">
+<h1>A lot of code looks like this:</h1>
+
+<pre class="sh_Ruby"><code>
+def update
+    @foo = Foo.find(params[:id])
+    respond_to do |format|
+      if @foo.update_attributes(params[:foo])
+        format.html { redirect_to(@foo) }
+      else
+        format.html { render :action =&gt; "edit" }
+      end
+    end
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/5">
+<h1>With InheritedResources</h1>
+
+<pre class="sh_Ruby"><code>class FooController &lt; ApplicationController
+  inherit_resources
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="libraries/03_other/6">
+<h1><a href="https://github.com/plataformatec/devise">Devise</a></h1>
+
+<ul>
+<li>A Swiss Army Knife For Your Authentication Needs</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/7">
+<pre class="sh_Ruby"><code>class User &lt; ActiveRecord::Base
+
+  devise :database_authenticatable, :recoverable,
+        :trackable, :timeoutable,
+        :registerable, :confirmable, :lockable,
+        :token_authenticatable
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="libraries/03_other/8">
+<h1><a href="https://github.com/jnicklas/carrierwave">CarrierWave</a></h1>
+
+<ul>
+<li>Attachments done easy</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/9">
+<h1>In your model</h1>
+
+<pre class="sh_Ruby"><code>class Image &lt; ActiveRecord::Base
+
+  validates_presence_of :file
+
+  mount_uploader :file, ImageUploader
+
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/10">
+<h1>The uploader</h1>
+
+<pre class="sh_Ruby"><code>
+
+class ImageUploader &lt; CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+  storage :file # can be :S3
+  process :resize_to_fit =&gt; [300,200]
+
+  def store_dir
+    "files/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="libraries/03_other/11">
+<h1><a href="https://github.com/collectiveidea/delayed_job">DelayedJob</a></h1>
+
+<ul>
+<li>Large email batches</li>
+<li>Web service calls</li>
+<li>FTP calls</li>
+<li>Image processing</li>
+<li>...</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/12">
+<h1>A Job</h1>
+
+<pre class="sh_Ruby"><code>class FooJob 
+
+  def initialize(foo_id)
+    @foo_id = foo_id
+  end
+
+  def perform
+    @service = FooService.new
+    @service.send(Foo.find(@foo_id))
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/13">
+<h1>Calling a job</h1>
+
+<pre class="sh_Ruby"><code>FooController &lt; ActionController
+  def something
+    @foo = Foo.find(params[:id])
+    Delayed::Job.enqueue FooJob.new(@foo.id) 
+  end
+end</code></pre>
+
+<ul>
+<li>Redis backed</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="libraries/03_other/14">
+<h1><a href="https://github.com/rubiii/savon">Savon</a></h1>
+
+<ul>
+<li>If you have to use SOAP, Savon is your friend</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="libraries/03_other/15">
+<pre class="sh_Ruby"><code>
+@client = Savon::Client.new do |wsdl|
+  wsdl.document = SOME_URL
+end
+
+base_body ={ "something" =&gt; foo.id,
+             "something_else" =&gt; foo.name}
+
+@response = @client.request :wsdl, :foo_service do |soap|
+  soap.namespaces['xmlns:soapenv'] = 'http://schemas.xmlsoap.org/soap/envelope/'
+  soap.header = SOME_HEADER
+  soap.body = base_body 
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="bdd/01_bdd/1">
+<h1>Testing / BDD</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="bdd/01_bdd/2">
+<h1><em>The</em> BDD language</h1>
+
+<ul>
+<li>RSpec</li>
+<li>Cucumber</li>
+</ul>
+
+
+<p>Come see my other talk about this :)</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="bdd/01_bdd/3">
+<h1><a href="https://github.com/thoughtbot/shoulda">Shoulda</a></h1>
+
+<ul>
+<li>Macros</li>
+<li>Makes it really easy to spec your models</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="bdd/01_bdd/4">
+<pre class="sh_Ruby"><code>
+describe Foo do
+
+  it { should validate_presence_of :name }
+  it { should validate_uniqueness_of :email }
+  it { should allow_value('foo').for(:bar) }
+  it { should_not allow_value('grr').for(:bar) }
+
+  it { should have_many :zaphods }
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="bdd/01_bdd/5">
+<h1>Timecop</h1>
+
+<pre class="sh_Ruby"><code>
+Timecop.freeze(Time.now) do
+  @foo.publish!
+  @foo.published_at.should == Time.now
+end
+
+Timecop.return
+
+Timecop.travel(Time.now + 30.days) do
+  @foo.should be_overdue
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="bdd/01_bdd/6">
+<h1>FakeWeb</h1>
+
+<pre class="sh_Ruby"><code>
+FakeWeb.allow_net_connect = false
+
+FakeWeb.register_uri(:get, 'SOME_URl', :body =&gt; PREPPED_BODY)
+FakeWeb.register_uri(:post, 'SOME_OTHER_URI', :body =&gt; ANOTHER_PREPPED_BODY)
+
+service = FooService.new
+service.send()
+service.return_code.should == 1</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="bdd/01_bdd/7">
+<h1>Mocking</h1>
+
+<ul>
+<li><a href="https://github.com/rspec/rspec-mocks">RSpec-Mocks</a></li>
+<li><a href="http://mocha.rubyforge.org/">Mocha</a></li>
+<li><a href="http://flexmock.rubyforge.org/">FlexMock</a></li>
+<li><a href="https://github.com/btakita/rr">RR</a></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="bdd/01_bdd/8">
+<pre class="sh_Ruby"><code>
+flexmock(User).should_receive(:find).with('42').and_return(jane)
+User.expects(:find).with('42').returns {jane}
+User.should_receive(:find).with('42').and_return(jane)
+User.should_receive(:find).with('42') {jane}
+mock(User).find('42') {jane}</code></pre>
+
+<p>Copied from the RR README</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="deployment/01_deploy/1">
+<h1>Deployment</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="deployment/01_deploy/2">
+<h1>Passenger</h1>
+
+<ul>
+<li>mod_ruby</li>
+<li>Apache</li>
+<li>nginx</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="deployment/01_deploy/3">
+<pre><code><code class="command">$ gem install passenger </code><code class="result">
+
+Building native extensions.  This could take a while...
+Successfully installed fastthread-1.0.7
+Successfully installed daemon_controller-0.2.6
+Successfully installed spruz-0.2.5
+Successfully installed file-tail-1.0.5
+Successfully installed passenger-3.0.5
+5 gems installed
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="deployment/01_deploy/4">
+<pre><code><code class="command">$  passenger-install-apache2-module</code><code class="result">
+
+This installer will guide you through the entire installation process. It
+shouldn't take more than 3 minutes in total.
+
+Here's what you can expect from the installation process:
+
+1. The Apache 2 module will be installed for you.
+2. You'll learn how to configure Apache.
+3. You'll learn how to deploy a Ruby on Rails application.
+
+Don't worry if anything goes wrong. This installer will advise you on how to
+solve any problems.
+
+Press Enter to continue, or Ctrl-C to abort
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="deployment/01_deploy/5">
+<h1><a href="https://github.com/defunkt/unicorn">Unicorn</a></h1>
+
+<ul>
+<li>For those times when Passenger is not an option</li>
+<li>Runs as separate processes, proxied from web server</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="deployment/01_deploy/6">
+<h1>SysLogLogger</h1>
+
+<ul>
+<li>Logs to system logger</li>
+<li>Configuration in syslog-ng, rsyslog ...</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="deployment/01_deploy/7">
+<h1>Capistrano</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="deployment/01_deploy/8">
+<pre><code><code class="command">$ cap deploy</code><code class="result">
+
+ * == Currently executing `deploy'
+ * == Currently executing `deploy:update'
+** transaction: start
+ * == Currently executing `deploy:update_code'
+   updating the cached checkout on all servers
+   executing locally: "git ls-remote git://github.com/agilasverige/agilasverige_site.git master"
+   command finished in 542ms * executing "if [ -d /home/agilasverige/apps/agilasverige/shared/cached-copy ]; then cd /home/agilasverige/apps/agilasverige/shared/cached-copy &amp;&amp; git fetch -q origin &amp;&amp; git reset -q --hard 93bd8a8277426d5ccdb94399704ee004a6050189 &amp;&amp; git clean -q -d -x -f; else git clone -q git://github.com/agilasverige/agilasverige_site.git /home/agilasverige/apps/agilasverige/shared/cached-copy &amp;&amp; cd /home/agilasverige/apps/agilasverige/shared/cached-copy &amp;&amp; git checkout -q -b deploy 93bd8a8277426d5ccdb94399704ee004a6050189; fi"
+   servers: ["agilasverige.cust.globalinn.com"]
+   [agilasverige.cust.globalinn.com] executing command
+   command finished in 1603ms
+[...]
+Recorded deployment to 'Agila Sverige' (2011-04-04 09:59:53 +0200)
+** Uploaded deployment information to New Relic
+  * == Currently executing `deploy:restart'
+  * executing "touch /home/agilasverige/apps/agilasverige/current/tmp/restart.txt"
+    servers: ["agilasverige.cust.globalinn.com"]
+    [agilasverige.cust.globalinn.com] executing command
+    command finished in 248ms
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="tools/01_tools/1">
+<h1>Tools</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="tools/01_tools/2">
+<h1>Editors</h1>
+
+<ul>
+<li>Vim</li>
+<li>Emacs</li>
+<li>IntelliJ / RedMine</li>
+<li>Eclipse</li>
+<li>TextMate</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="tools/01_tools/3">
+<h1>Continuous Integration</h1>
+
+<ul>
+<li>Jenkins</li>
+<li>CIJoe</li>
+<li>CruiseControl.rb</li>
+<li>Cerberus</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="tools/01_tools/4">
+<h1>New Relic RPM</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="tools/01_tools/5">
+<p><img src="./file/tools/rpm.png" width="1394" height="740" alt="RPM"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="tools/01_tools/6">
+<p><img src="./file/tools/rpm_wt.png" width="1394" height="744" alt="RPM Web Transactions"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="tools/01_tools/7">
+<p><img src="./file/tools/rpm_db.png" width="1395" height="742" alt="RPM DB"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="tools/01_tools/8">
+<pre class="sh_Ruby"><code>
+gem 'newrelic_rpm'</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline" ref="tools/01_tools/9">
+<pre><code><code class="command">$ cp new_relic.yml config</code><code class="result">
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="tools/01_tools/10">
+<h1>Not only Rails</h1>
+
+<ul>
+<li>PHP</li>
+<li>.Net</li>
+<li>Java</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="tools/01_tools/11">
+<h1>Exceptional</h1>
+
+<ul>
+<li>Exceptions</li>
+<li>404's</li>
+<li>Emails
+
+<ul>
+<li>Exceptions</li>
+<li>Comments</li>
+<li>Digest</li>
+</ul>
+</li>
+<li>Reports
+
+<ul>
+<li>Campfire</li>
+<li>Lighthouse</li>
+<li>General Post</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="thanks/thanks/1">
+<h1>Wrapping up</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="thanks/thanks/2">
+<p><img src="./file/thanks/wagnerius.png" width="488" height="202" alt="Wagnerius"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="thanks/thanks/3">
+<h1>Comments</h1>
+
+<ul>
+<li>"Dread going back to Java"</li>
+<li>"If I return to Java it has to be Play framework"</li>
+<li>Compilation, Maven</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="thanks/thanks/4">
+<h1><a href="http://ruby-toolbox.com">Ruby Toolbox</a></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="thanks/thanks/5">
+<h1>Thank You!</h1>
+
+<p><img src="./file/thanks/valtech_logo.jpg" width="568" height="143" alt="Valtech"/></p>
+</div>
+</div>
+</div>
+
+</body>
+</html>
