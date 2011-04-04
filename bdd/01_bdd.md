@@ -1,3 +1,7 @@
+!SLIDE subsection
+
+# Testing / BDD
+
 !SLIDE bullets
 
 # _The_ BDD language
@@ -37,6 +41,12 @@ Come see my other talk about this :)
     Timecop.freeze(Time.now) do
       @foo.publish!
       @foo.published_at.should == Time.now
+    end
+
+    Timecop.return
+
+    Timecop.travel(Time.now + 30.days) do
+      @foo.should be_overdue
     end
 
 !SLIDE

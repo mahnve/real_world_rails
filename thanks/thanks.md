@@ -1,3 +1,7 @@
+!SLIDE subsection
+
+# Wrapping up
+
 !SLIDE full-page
 
 ![Wagnerius](wagnerius.png)
@@ -15,5 +19,7 @@
 # [Ruby Toolbox](http://ruby-toolbox.com)
 
 !SLIDE center
+
 #Thank You!
+
 ![Valtech](valtech_logo.jpg)

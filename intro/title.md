@@ -28,8 +28,11 @@ Valtech AB
 
 !SLIDE bullets
 
+# Goal of the presentation
+
 * Most have seen the venerable Blog example
-* What does it look like in a real project
+* Travellers guide
+* A flyover a real project
 
 !SLIDE bullets
 

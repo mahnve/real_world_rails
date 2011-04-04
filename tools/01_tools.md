@@ -1,3 +1,7 @@
+!SLIDE subsection
+
+# Tools
+
 !SLIDE bullets
 
 # Editors
@@ -8,6 +12,7 @@
 * Eclipse
 * TextMate
 
+!SLIDE bullets
 
 # Continuous Integration
 
